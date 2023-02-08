@@ -22,16 +22,35 @@ print(mytuple)
 print(mydict)
 
 # re-declaring a variable works
+myint = "abc"
+print(myint)
 
 # to access a member of a sequence type, use []
+print(mylist[2])
+print(mytuple[1])
 
-# use slices to get parts of a sequence
+# use slices to get parts of a sequence = start/end/step value
+print(mylist[1:5])
+print(mylist[1:5:2])
 
 # you can use slices to reverse a sequence
+print(mylist[::-1])
 
 # dictionaries are accessed via keys
+print(mydict["one"])
 
 # ERROR: variables of different types cannot be combined
+# print("string type" + 123)
+print("string type" + str(123))
 
 # Global vs. local variables in functions
+def someFunction():
+  global mystr
+  mystr = "def"
+  print(mystr)
 
+someFunction()
+print(mystr) # without global would print "This is a string"
+
+del mystr
+print(mystr) # del deletes variable definition
